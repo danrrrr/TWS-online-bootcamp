@@ -1,9 +1,7 @@
 'use strict';
 
 function compute_average(collection) {
-  //在这里写入代码
-  let sum = 0;
-  collection.forEach(x => sum += x);
+  let sum = collection.reduce((sum, current) => sum + current, 0);
   return sum / collection.length;
 }
 

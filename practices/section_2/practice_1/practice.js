@@ -1,5 +1,4 @@
 function count_same_elements(collection) {
-  //在这里写入代码
   let result = new Map();
   let regx = /(\w)\-?(\d*)/
   let value = 0;

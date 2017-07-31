@@ -1,9 +1,7 @@
 'use strict';
 
 function find_first_even(collection) {
-  //在这里写入代码
-  let index = collection.findIndex(ele => ele % 2 === 0);
-  return collection[index]
+  return collection[collection.findIndex(ele => ele % 2 === 0)]
 }
 
 module.exports = find_first_even;

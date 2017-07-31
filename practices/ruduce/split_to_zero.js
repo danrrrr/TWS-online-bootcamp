@@ -1,7 +1,6 @@
 'use strict';
 
 function spilt_to_zero(number, interval) {
-  //在这里写入代码
   let result = [];
   result.push(number);
   while(!(number <= 0)){

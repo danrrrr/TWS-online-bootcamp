@@ -16,8 +16,6 @@ var even_group_calculate_average = function(collection){
     return [getAverage(arr1), getAverage(arr2), getAverage(arr3)];
 };
 let getAverage = arr => {
-      let sum = 0;
-      arr.forEach(x => sum += x);
-      return sum / arr.length;
+      return arr.reduce((sum, current) => sum + current, 0) / arr.length;
     }
 module.exports = even_group_calculate_average;

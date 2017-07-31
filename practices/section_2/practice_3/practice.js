@@ -1,5 +1,4 @@
 function count_same_elements(collection) {
-  //在这里写入代码
   let regx = /(\w{1}).?(\d*)\]?/;
   let result = new Map();
   collection.forEach(ele =>{ let [_, key, value] = ele.match(regx);

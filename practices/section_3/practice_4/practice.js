@@ -1,6 +1,5 @@
 function create_updated_collection(collection_a, object_b) {
-  //在这里写入代码
-   let result = new Map();
+  let result = new Map();
   let regx = /(\w)\-?(\d*)/;
   collection_a.forEach(ele =>{ let [_, key, value] = ele.match(regx);
       value = value === "" ? 1 : parseInt(value);

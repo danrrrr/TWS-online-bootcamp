@@ -1,6 +1,5 @@
 'use strict';
 var is_exist_element = function(collection,element){
-    let arr = collection.filter((ele, index) => index % 2 === 0);
-    return arr.includes(element);
+    return collection.filter((ele, index) => index % 2 === 0).includes(element);
 };
 module.exports = is_exist_element;

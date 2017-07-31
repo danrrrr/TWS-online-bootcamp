@@ -1,8 +1,7 @@
 'use strict';
 
 function collect_max_number(collection) {
-  //在这里写入代码
-  return collection.sort((a, b) => a - b).pop();
+  return collection.reduce((max, value) => max > value ? max : value)
 }
 
 module.exports = collect_max_number;

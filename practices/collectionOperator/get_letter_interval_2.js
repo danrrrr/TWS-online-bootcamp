@@ -1,7 +1,6 @@
 'use strict';
 
 function get_letter_interval_2(num1, num2) {
-  //在这里写入代码
   let result = [];
   let max = num1 > num2 ? num1 : num2;
   let min = num1 < num2 ? num1 : num2;
