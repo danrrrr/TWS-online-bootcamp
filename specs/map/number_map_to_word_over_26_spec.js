@@ -9,6 +9,6 @@ describe('number_map_to_word_over_26', function() {
   it('字母表映射2', function() {
     var result = number_map_to_word_over_26(collection_a);
     expect(result).toEqual(collection_b);
-  });
+  }); 
 });
 
