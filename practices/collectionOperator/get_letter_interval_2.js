@@ -1,23 +1,23 @@
 'use strict';
 
 function get_letter_interval_2(num1, num2) {
-  let result = [];
-  let max = num1 > num2 ? num1 : num2;
-  let min = num1 < num2 ? num1 : num2;
-  for(let i = min; i <= max; i++)
-  {
-    let s = '';
-    let num = i;
-    while (num > 0) {
-    let m = num % 26
-    if (m === 0) m = 26
-    s = (m + 9).toString(36) + s
-    num = (num - m) / 26
-    }
-    result.push(s);
-  }
+  const arr = [number_to_words(num1)];
+  if(num1 === num2) return arr;
+  const offset = num1 < num2 ? 1 : -1;
+  return [...arr, ...get_letter_interval_2(num1 + offset, num2)];
+  
   
   return num1 > num2 ? result.reverse() : result;
+}
+function number_to_words(num){
+  let s = '';
+  while(num > 0){
+    let m = num % 26;
+    m = m === 0 ? 26 : m;
+    s = (m + 9).toString(36) + s;
+    num = (num - m) / 26;
+  }
+  return s;
 }
 
 module.exports = get_letter_interval_2;
