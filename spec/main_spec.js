@@ -12,6 +12,14 @@ var main = require("../lib/main.js");
 describe("测试描述", function(){
     sinon.spy(console, 'log');
 
+    it("no input", function(){
+
+        var result = main();
+        var expect_string = `No more bottles of beer on the wall, no more bottles of beer.
+Go to the store and buy some more, 99 bottles of beer on the wall.`;
+        
+        expect(expect_string).to.equal(result);
+    });
     it("0 bottle", function(){
 
         var result = main(0);
@@ -20,7 +28,6 @@ Go to the store and buy some more, 99 bottles of beer on the wall.`;
         
         expect(expect_string).to.equal(result);
     });
-
     it("1 bottle", function(){
         var result = main(1);
         var expect_string = `1 bottle of beer on the wall, 1 bottle of beer.
