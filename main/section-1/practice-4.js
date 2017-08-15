@@ -1,14 +1,7 @@
 'use strict';
 
 module.exports = function collectSameElements(collectionA, objectB) {
-    let result = new Array();
-
-  for(let i = 0; i < collectionA.length; i ++){
-    for(let j = 0; j < objectB.value.length; j++){
-      if(collectionA[i].key === objectB.value[j]){
-        result.push(collectionA[i].key);
-      }
-    }
-  }
-  return result;
+  let arr = [];
+  collectionA.forEach(x => arr.push(x.key));
+  return arr.filter(x => objectB.value.indexOf(x) !== -1);
 }

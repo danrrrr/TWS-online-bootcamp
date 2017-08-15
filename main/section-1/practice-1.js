@@ -1,5 +1,5 @@
 'use strict';
 
-module.exports = function collectSameElements(collectionA, collectionB) {
-  return [... new Set(collectionA.filter(ele => collectionB.indexOf(ele) !== -1))];
-};
+module.exports = (collectionA, collectionB) =>
+  [... new Set(collectionA.filter(x => collectionB.indexOf(x) !== -1))];
+  
