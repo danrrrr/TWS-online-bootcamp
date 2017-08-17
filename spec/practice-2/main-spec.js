@@ -4,14 +4,14 @@ const Teacher = require('../../main/practice-2/teacher');
 const Class = require('../../main/practice-2/class');
 
 describe("Person", () => {
-  it("should have field name and age", () => {
-    let person = new Person("Tom", 21);
+  it("1should have field name and age", () => {
+    let person = new Person("Tom", 21, '1');
     expect(person.name).toBe("Tom");
     expect(person.age).toBe(21);
   });
 
-  it("should have a method introduce, introduce person with name and age", () => {
-    let person = new Person("Tom", 21);
+  it("2should have a method introduce, introduce person with name and age", () => {
+    let person = new Person("Tom", 21, '1');
 
     let introduce = person.introduce();
 
@@ -20,28 +20,28 @@ describe("Person", () => {
   });
 
   describe("Student", () => {
-    it("should have field name, age and class", () => {
+    it("3should have field name, age and class", () => {
       let clazz = new Class(2);
-      let student = new Student("Tom", 21, clazz);
+      let student = new Student("Tom", 21, '2', clazz);
       expect(student.name).toBe("Tom");
       expect(student.age).toBe(21);
       expect(student.clazz).toBe(clazz);
 
     });
 
-    it("should overwrite Person introduce, introduce student with class", () => {
+    it("4should overwrite Person introduce, introduce student with class", () => {
       let clazz = new Class(2);
-      let student = new Student("Tom", 21, clazz);
+      let student = new Student("Tom", 21, '2', clazz);
       let introduce = student.introduce();
 
       expect(introduce).toBe("My name is Tom. I am 21 years old. I am a Student. I am at Class 2.");
 
     });
 
-    it("should introduce student is a leader, when class assign this student to be a leader",
+    it("5should introduce student is a leader, when class assign this student to be a leader",
     () => {
       let clazz = new Class(2);
-      let student = new Student("Tom", 21, clazz);
+      let student = new Student("Tom", 21, '2', clazz);
       clazz.assignLeader(student);
       let introduce = student.introduce();
 
@@ -53,20 +53,20 @@ describe("Person", () => {
 
   describe("Teacher", () => {
 
-    it("should have field name, age and klass", () => {
+    it("6should have field name, age and klass", () => {
       let clazz1 = new Class(2);
       let clazz2 = new Class(3);
-      let teacher = new Teacher("Joun", 21, [clazz1, clazz2]);
+      let teacher = new Teacher("Joun", 21,'3', [clazz1, clazz2]);
       expect(teacher.name).toBe("Joun");
       expect(teacher.age).toBe(21);
       expect(teacher.clazzes).toEqual([clazz1, clazz2]);
     });
 
-    it("should overwrite Person introduce and show all class this teacher teaches, when init two classed to this teacher",
+    it("7should overwrite Person introduce and show all class this teacher teaches, when init two classed to this teacher",
     () => {
       let clazz1 = new Class(2);
       let clazz2 = new Class(3);
-      let teacher = new Teacher("Joun", 21, [clazz1, clazz2]);
+      let teacher = new Teacher("Joun", 21,'3', [clazz1, clazz2]);
 
       let introduce = teacher.introduce();
 
@@ -74,9 +74,9 @@ describe("Person", () => {
 
     });
 
-    it("should show no class this teacher teacher, when there is no class assgin to this teacher",
+    it("8should show no class this teacher teacher, when there is no class assgin to this teacher",
     () => {
-      let teacher = new Teacher("Joun", 21, []);
+      let teacher = new Teacher("Joun", 21,'3', []);
 
       let introduce = teacher.introduce();
 

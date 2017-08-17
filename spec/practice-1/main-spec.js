@@ -22,7 +22,7 @@ describe("Person", () => {
     it("should have field name, age and class number", () => {
       let student = new Student("Tom", 21, 2);
       expect(student.name).toBe("Tom");
-      expect(student.age).toBe(21);
+      expect(student.age).toBe(21); 
       expect(student.klass).toBe(2);
 
     });
