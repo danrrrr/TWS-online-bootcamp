@@ -1,24 +1,30 @@
 'use strict';
 
-function includes(collection, ch) {
-    for (let item of collection) {
-        if (item === ch) {
-            return true;
-        }
-    }
+// function includes(collection, ch) {
+//     for (let item of collection) {
+//         if (item === ch) {
+//             return true;
+//         }
+//     }
 
-    return false;
-}
+//     return false;
+// }
 
 module.exports = function createUpdatedCollection(collectionA, objectB) {
-    let result = [];
-    for (let item of collectionA) {
-        let key = item.key;
-        let count = item.count;
-        if (includes(objectB.value, key)) {
-            count--;
+    collectionA.forEach(x => {
+        if(objectB.value.indexOf(x.key) !== -1){
+            x.count--;
         }
-        result.push({key, count});
-    }
-    return result;
+    });
+    return collectionA;
+    // let result = [];
+    // for (let item of collectionA) {
+    //     let key = item.key;
+    //     let count = item.count;
+    //     if (includes(objectB.value, key)) {
+    //         count--;
+    //     }
+    //     result.push({key, count});
+    // }
+    // return result;
 }
